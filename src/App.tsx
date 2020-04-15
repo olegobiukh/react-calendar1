@@ -15,19 +15,56 @@ function App() {
           <section>
             <h2>Input Styling</h2>
             <div className="row">
-              <Input label="Caption for field" placeholder="Placeholder" />
+              <Input 
+                label="Field not available" 
+                inputClassName="custom-input custom-input--notable" 
+                placeholder="Field not available"
+                disabled />
             </div>
             <div className="row">
-              <Input label="Disabled" placeholder="Placeholder" disabled />
+              <Input 
+                label="Caption for field" 
+                inputClassName="custom-input" 
+                placeholder="Static" 
+                 />
             </div>
             <div className="row">
-              <Input label="Error" placeholder="Placeholder" error="Error text" icon="error" />
+              <Input 
+                label="Caption for field" 
+                inputClassName="custom-input custom-input--hover" 
+                placeholder="Hover" 
+                />
             </div>
             <div className="row">
-              <Input label="Success" value="Text exemple for field" success readOnly />
+              <Input 
+                label="Caption for field" 
+                inputClassName="custom-input custom-input--caption" 
+                value="Text exemple for field" 
+                />
             </div>
             <div className="row">
-              <Input value="Search" icon="search" readOnly />
+              <Input 
+                type="password"
+                label="Caption for field" 
+                inputClassName="custom-input" 
+                value="Text exemple for field" 
+                success
+                />
+            </div>
+            <div className="row">
+              <Input 
+                label="Caption for field" 
+                inputClassName="custom-input custom-input--error" 
+                value="Text exemple for field" 
+                icon="error"
+                error="Error text"
+                />
+            </div>
+            <div className="row">
+              <Input 
+                placeholder="Search" 
+                inputClassName="custom-input custom-input--search" 
+                icon="search" readOnly search />
             </div>
           </section>
           <section>

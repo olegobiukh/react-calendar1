@@ -1,0 +1,53 @@
+$c-error: #df1721;
+$c-default: #cdcdcd;
+
+.input-wrapper {
+  position: relative;
+  max-width: 300px;
+}
+
+.custom-input {
+  width: 100%;
+  font-size: 12px;
+  margin-top: 4px;
+  padding: 8px 12px;
+  border-radius: 3px;
+  border: 1px solid #dadada;
+  box-sizing: border-box;
+  &--notable {
+    background: #f8f8f8;
+  }
+  &--error {
+    border-color: #df1721;
+  }
+  &--search {
+    color: #8b8b8b;
+  }
+  &--hover,
+  &--caption {
+    border-color: #000;
+  }
+}
+
+.custom-label {
+  font-size: 10px;
+}
+
+.custom-icon {
+  position: absolute;
+  right: 12px;
+  bottom: 9px;
+  &--success {
+    fill: #62b120;
+  }
+  &--error {
+    fill: $c-error;
+  }
+  &--search {
+    fill: $c-default;
+  }
+}
+
+.error-text {
+  color: $c-error;
+}

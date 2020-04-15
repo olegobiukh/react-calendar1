@@ -1,3 +1,5 @@
+import './index.scss'
+
 import React from 'react';
 import clsx from 'clsx';
 
@@ -26,6 +28,8 @@ interface IComponentProps extends React.InputHTMLAttributes<HTMLInputElement> {
    * Removes focus from input when "Enter" is pressed.
    */
   blurOnSubmit?: boolean;
+  inputClassName?: string; 
+  search?: boolean; 
 }
 
 const Input: React.FC<IComponentProps> = ({
@@ -35,7 +39,9 @@ const Input: React.FC<IComponentProps> = ({
   icon,
   blurOnSubmit,
   className,
+  inputClassName,
   onKeyPress,
+  search,
   ...props
 }) => {
   if (success && !icon) icon = 'check-circle';
@@ -47,10 +53,14 @@ const Input: React.FC<IComponentProps> = ({
 
   return (
     <StyledInput className={clsx('input', { label, icon, error, success }, className)}>
-      <label>{label}</label>
+      <label className={`custom-label`}>{label}</label>
       <div className="input-wrapper">
-        <input onKeyPress={handleKeyPress} {...props} />
-        {icon && <Icon name={icon} />}
+        <input onKeyPress={handleKeyPress} className={inputClassName} {...props} readOnly />
+        {icon && (
+        <Icon 
+          name={icon} 
+          className={`custom-icon ${success ? 'custom-icon--success' : error ? 'custom-icon--error': search ? 'custom-icon--search' : null }`}
+        />)}
       </div>
       <div className="error-text">{error}</div>
     </StyledInput>
