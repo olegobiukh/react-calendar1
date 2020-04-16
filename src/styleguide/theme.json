@@ -18,7 +18,8 @@
     "blue": "#2979ff",
     "lightBlue": "#d7e6ff",
     "mineShaft": "#333333",
-    "salmon": "#ff7272"
+    "salmon": "#ff7272",
+    "shadow": "rgba(0, 0, 0, 0.16)"
   },
   "breakpoints": {
     "lg": "1600px",

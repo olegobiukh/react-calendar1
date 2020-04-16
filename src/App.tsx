@@ -17,28 +17,24 @@ function App() {
             <div className="row">
               <Input 
                 label="Field not available" 
-                inputClassName="custom-input custom-input--notable" 
                 placeholder="Field not available"
                 disabled />
             </div>
             <div className="row">
               <Input 
                 label="Caption for field" 
-                inputClassName="custom-input" 
                 placeholder="Static" 
                  />
             </div>
             <div className="row">
               <Input 
                 label="Caption for field" 
-                inputClassName="custom-input custom-input--hover" 
                 placeholder="Hover" 
                 />
             </div>
             <div className="row">
               <Input 
                 label="Caption for field" 
-                inputClassName="custom-input custom-input--caption" 
                 value="Text exemple for field" 
                 />
             </div>
@@ -46,7 +42,6 @@ function App() {
               <Input 
                 type="password"
                 label="Caption for field" 
-                inputClassName="custom-input" 
                 value="Text exemple for field" 
                 success
                 />
@@ -54,7 +49,6 @@ function App() {
             <div className="row">
               <Input 
                 label="Caption for field" 
-                inputClassName="custom-input custom-input--error" 
                 value="Text exemple for field" 
                 icon="error"
                 error="Error text"
@@ -63,7 +57,6 @@ function App() {
             <div className="row">
               <Input 
                 placeholder="Search" 
-                inputClassName="custom-input custom-input--search" 
                 icon="search" readOnly search />
             </div>
           </section>

@@ -1,7 +1,55 @@
-import './index.scss'
-
 import React from 'react'
 import icons from 'icons'
+import styled from 'styleguide/styled';
+import { colors } from 'styleguide/theme.json';
+
+const NotificationsContainer = styled.div`
+  display: grid;
+  grid-gap: 4px;
+  width: 300px;
+  padding: 24px 16px;
+  box-shadow: 0px 18px 50px ${colors.shadow};
+  border-radius: 3px;
+`
+const NotificationsTitle = styled.div`
+  margin: 0;
+`
+const NotificationsSubtitle = styled.div`
+  margin-top: 4px;
+  color: ${colors.grayDark};
+`
+const NotificationsAuthorsIcon = styled.img`
+  margin-top: 4px;
+  border-radius: 50%;
+  width: 17px;
+  height: 17px;
+`
+const NotificationsAuthorsDate = styled.span`
+  margin-left: 10px;
+  color: $c-gray;
+`
+const NotificationsAuthor = styled.div`
+  display: flex;
+  align-items: center;
+`
+const NotificationsStatus = styled.span`
+  color: ${colors.red};
+  text-transform: uppercase;  
+`
+const NotificationsMore = styled.p`
+  margin: 0;
+  text-align: center;
+  margin-top: 24px;
+  cursor: pointer;
+`
+const NotificationsMoreText = styled.span`
+  font-weight: bold;
+`
+const NotificationsItem = styled.span`
+  background-color: ${colors.grayLight};
+  border-radius: 3px;
+  padding: 12px 9px;
+`
 
 const Notifications = () => {
   const items = [
@@ -29,26 +77,26 @@ const Notifications = () => {
 
   return (
     <>
-    <div className="icon">
-      <img src={icons.notifications} alt="notification" />
-    </div>
-    <div className={`notifications__container`}>
+    <img src={icons.notifications} alt="notification" />
+    <NotificationsContainer>
       {items.map((item, index)=> (
-          <div className={`notifications__item`} key={index}>
-            <p 
-              className={`notifications__title`}>
-                Effective Date has changed from<br/> {item.from} to {item.to} <span className={`notifications__status`}>new</span>
-            </p>            
-            <p className={`notifications__subtitle`}>Non-residential building</p>
-            <div className={`notifications__author`}>
-              <img src={icons.author} alt="author" className={`notifications__author-icon`} />
-              <span className={`notifications__author-date`}>{item.date}</span>
-            </div>
-          </div>
+          <NotificationsItem key={index}>
+            <NotificationsTitle>
+                Effective Date has changed from<br/> {item.from} to {item.to} 
+                <NotificationsStatus>new</NotificationsStatus>
+            </NotificationsTitle>            
+            <NotificationsSubtitle>Non-residential building</NotificationsSubtitle>
+            <NotificationsAuthor>
+              <NotificationsAuthorsIcon src={icons.author} alt="author" />
+              <NotificationsAuthorsDate>{item.date}</NotificationsAuthorsDate>
+            </NotificationsAuthor>
+          </NotificationsItem>
       ))
       }
-      <p className={`notifications__more`}><span className={`notifications__more-text`}>Show more</span> ({amount})</p>
-    </div>
+      <NotificationsMore>
+        <NotificationsMoreText>Show more</NotificationsMoreText> ({amount})
+      </NotificationsMore>
+    </NotificationsContainer>
     </>
   )
 }
